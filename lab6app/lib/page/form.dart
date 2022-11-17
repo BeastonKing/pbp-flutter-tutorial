@@ -1,5 +1,6 @@
 import 'package:lab6app/main.dart';
 import 'package:flutter/material.dart';
+import 'package:lab6app/page/to_do_page.dart';
 
 class MyFormPage extends StatefulWidget {
     const MyFormPage({super.key});
@@ -56,18 +57,20 @@ class _MyFormPageState extends State<MyFormPage> {
                       );
                     },
                   ),
+
+                  ListTile(
+                    title: const Text('To Do'),
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => const ToDoPage()),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
 
-            // body: Center(
-            //     child: Column(
-            //         mainAxisAlignment: MainAxisAlignment.center,
-            //         children: <Widget>[
-            //             Text('Hello World!'),
-            //         ],
-            //     ),
-            // ),
 
             body: Form(
               key: _formKey,
